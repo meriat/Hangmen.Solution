@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Hangman Game</h1>
+<h3>Hangman Graphic</h3>
+<h3>
+@foreach(var eachLetter in @Model.ToCharArray())
+{
+  <span>_&nbsp;</span>
+}
+</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+<form action="/hangman" method="post">
+  <label for="guessLetter">A Letter</label>
+  <input type="text" id="guessLetter" name="guessLetter" maxlength="1">
+  <button type="submit">Guess!</button>
+</form>

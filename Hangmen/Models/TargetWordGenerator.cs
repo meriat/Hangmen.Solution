@@ -1,16 +1,3 @@
-// Predefined words = List <string> predefinedWords;
-//
-// class TargetWordGenerator
-// {
-//   private predefinedWords;
-//   private targetWord;
-//
-//   public string targetWordGenerate
-//   {
-//
-//   }
-// }
-
 using System;
 using System.Collections.Generic;
 
