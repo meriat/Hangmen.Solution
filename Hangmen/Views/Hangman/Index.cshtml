@@ -3,16 +3,50 @@
 }
 
 <h1>Hangman Game</h1>
-<h3>Hangman Graphic</h3>
-<h3>
-@foreach(var eachLetter in @Model.ToCharArray())
+<p>
+@if (@Model["gameOver"] == "true")
 {
-  <span>_&nbsp;</span>
+<img src="~/img/Hangman6.png">
+}
+else if (@Model["incorrectLetters"].Length == 0)
+{
+<img src="~/img/Hangman0.png">
+}
+else if (@Model["incorrectLetters"].Length == 1)
+{
+<img src="~/img/Hangman1.png">
+}
+else if (@Model["incorrectLetters"].Length == 2)
+{
+<img src="~/img/Hangman2.png">
+}
+else if (@Model["incorrectLetters"].Length == 3)
+{
+<img src="~/img/Hangman3.png">
+}
+else if (@Model["incorrectLetters"].Length == 4)
+{
+<img src="~/img/Hangman4.png">
+}
+else
+{
+<img src="~/img/Hangman5.png">
+}
+</p>
+@foreach(var letter in @Model["correctLetters"].ToCharArray())
+{
+  <span>@letter </span>
 }
 </h3>
-<h3>&nbsp;&nbsp;&nbsp;&nbsp;</h3>
 <form action="/hangman" method="post">
   <label for="guessLetter">A Letter</label>
   <input type="text" id="guessLetter" name="guessLetter" maxlength="1">
   <button type="submit">Guess!</button>
 </form>
+<h3>
+@foreach(var letter in @Model["incorrectLetters"].ToCharArray())
+{
+<span>@letter </span>
+}
+</h3>
+<a href="/hangman">play again!</a>

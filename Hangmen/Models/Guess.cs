@@ -7,7 +7,8 @@ namespace Hangmen.Models
   {
     public char letter { get; set; }
     public static List<Guess> guesses = new List<Guess> {};
-
+    public static string correctLetters = "";
+    public static string incorrectLetters = "";
     public Guess(char newLetter)
     {
       letter = newLetter;

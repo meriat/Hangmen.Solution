@@ -16,5 +16,15 @@ namespace Hangmen.Models
       int randomNumber = rand.Next(predefinedWordsLength);
       targetWord = predefinedWords[randomNumber];
     }
+
+    public string InitializeCorrectLetters()
+    {
+      string correctLetters = "";
+      foreach (char ch in targetWord.ToCharArray())
+      {
+        correctLetters += "_";
+      }
+      return correctLetters;
+    }
   }
 }
