@@ -13,7 +13,7 @@ namespace Hangmen.Models
       letter = newLetter;
       guesses.Add(this);
     }
-    public static bool checkDuplicate(char newLetter)
+    public static bool CheckDuplicate(char newLetter)
     {
       //listName.Exists(condition) looks for an item which is matched with the condition, and if it succeed to find an item in the list, it will return true, otherwise, it will return false
       if(guesses.Exists(guess => guess.letter == newLetter) == true)
